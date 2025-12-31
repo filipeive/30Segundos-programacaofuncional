@@ -125,6 +125,7 @@ let timer = 30;
 let timerInterval = null;
 let currentDiceValue = 0;
 let selectedCategories = [];
+let currentCardSide = 'yellow';
 const WINNING_SCORE = 30;
 
 const BIBLE_VERSES = [
@@ -169,6 +170,8 @@ const diceTeamName = document.getElementById('dice-team-name');
 const diceDisplay = document.getElementById('dice');
 const boardContainer = document.getElementById('board-container');
 const scoresList = document.getElementById('scores-list');
+const physicalCard = document.getElementById('physical-card');
+const cardSideLabel = document.getElementById('card-side-label');
 const winnerText = document.getElementById('winner-text');
 const finalScores = document.getElementById('final-scores');
 const timesUpOverlay = document.getElementById('times-up-overlay');
@@ -308,6 +311,11 @@ function startRound() {
     timer = 30;
     currentWordIndex = 0;
     wordStatuses = new Array(5).fill('pending');
+
+    // Select side
+    currentCardSide = Math.random() > 0.5 ? 'yellow' : 'blue';
+    physicalCard.className = `physical-card ${currentCardSide}`;
+    cardSideLabel.innerText = currentCardSide === 'yellow' ? 'Lado Amarelo' : 'Lado Azul';
 
     // Select words
     if (selectedCategories.length === 0) {
