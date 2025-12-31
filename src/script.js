@@ -162,6 +162,7 @@ const btnSeeScore = document.getElementById('btn-see-score');
 const btnNextRound = document.getElementById('btn-next-round');
 const btnFinishGame = document.getElementById('btn-finish-game');
 const btnRestart = document.getElementById('btn-restart');
+const btnFullscreen = document.getElementById('btn-fullscreen');
 
 const timerDisplay = document.getElementById('timer');
 const wordListContainer = document.getElementById('word-list-container');
@@ -222,6 +223,19 @@ btnStart.onclick = () => showScreen('setup-screen');
 btnRules.onclick = () => showScreen('rules-screen');
 btnSettings.onclick = () => showScreen('settings-screen');
 btnBacks.forEach(btn => btn.onclick = () => showScreen('home-screen'));
+
+// Full Screen Toggle
+btnFullscreen.onclick = () => {
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(err => {
+            console.log(`Error attempting to enable full-screen mode: ${err.message}`);
+        });
+        btnFullscreen.innerText = "Sair";
+    } else {
+        document.exitFullscreen();
+        btnFullscreen.innerText = "Ativar";
+    }
+};
 
 // Team Management
 btnAddTeam.onclick = () => {

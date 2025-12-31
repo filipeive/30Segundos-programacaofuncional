@@ -1,0 +1,23 @@
+{
+    "name": "30 Segundos - Premium Team Edition",
+    "short_name": "30 Segundos",
+    "description": "Um jogo de adivinhação por equipes rápido e divertido.",
+    "start_url": "index.html",
+    "display": "standalone",
+    "background_color": "#0f172a",
+    "theme_color": "#6366f1",
+    "icons": [
+        {
+            "src": "src/assets/card_yellow_bg.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "src/assets/card_blue_bg.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ]
+}
