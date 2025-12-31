@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>30 Segundos - Premium Team Edition</title>
+    <link rel="stylesheet" href="src/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="app">
+        <!-- Home Screen -->
+        <section id="home-screen" class="screen active">
+            <div class="glass-card main-card">
+                <h1 class="title">30 Segundos</h1>
+                <p class="subtitle">Team Edition</p>
+                <div class="bible-verse-container" id="home-verse">
+                    <!-- Bible verse will be injected here -->
+                </div>
+                <div class="button-group">
+                    <button id="btn-start" class="btn primary large-text">JOGAR</button>
+                    <div class="secondary-btns">
+                        <button id="btn-rules" class="btn secondary">Regras</button>
+                        <button id="btn-settings" class="btn secondary">Configurações</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rules Screen -->
+        <section id="rules-screen" class="screen">
+            <div class="glass-card">
+                <h2>Regras do Jogo</h2>
+                <div class="rules-content">
+                    <ul>
+                        <li><strong>Equipes:</strong> Mínimo 2 equipes.</li>
+                        <li><strong>Tempo:</strong> 30 segundos por rodada.</li>
+                        <li><strong>Objetivo:</strong> Descrever 5 palavras para sua equipe.</li>
+                        <li><strong>Proibido:</strong> Dizer a palavra, traduzir ou soletrar.</li>
+                        <li><strong>Dado:</strong> O valor do dado (0, 1, 2) é subtraído dos acertos.</li>
+                        <li><strong>Vitória:</strong> A primeira equipe a atingir 30 pontos.</li>
+                    </ul>
+                </div>
+                <button class="btn-back btn secondary">Voltar</button>
+            </div>
+        </section>
+
+        <!-- Settings Screen -->
+        <section id="settings-screen" class="screen">
+            <div class="glass-card">
+                <h2>Configurações</h2>
+                <div class="settings-group">
+                    <div class="setting-item">
+                        <span>Sons</span>
+                        <label class="switch">
+                            <input type="checkbox" id="toggle-sounds" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <span>Vibração (Mobile)</span>
+                        <label class="switch">
+                            <input type="checkbox" id="toggle-vibration" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                <button class="btn-back btn secondary">Voltar</button>
+            </div>
+        </section>
+
+        <!-- Team Setup Screen -->
+        <section id="setup-screen" class="screen">
+            <div class="glass-card">
+                <h2>Equipes</h2>
+                <div class="setup-form">
+                    <input type="text" id="team-name-input" placeholder="Nome da Equipe" maxlength="20">
+                    <button id="btn-add-team" class="btn primary">Add</button>
+                </div>
+                <div id="teams-list" class="teams-list">
+                    <!-- Teams will be listed here -->
+                </div>
+                <div class="button-group">
+                    <button id="btn-choose-categories" class="btn primary" disabled>Próximo</button>
+                    <button class="btn-back btn secondary">Voltar</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Category Selection Screen -->
+        <section id="category-screen" class="screen">
+            <div class="glass-card">
+                <h2>Categorias</h2>
+                <div class="category-grid">
+                    <div class="cat-card" data-cat="biblia_pessoas">
+                        <span class="cat-icon">👤</span>
+                        <span class="cat-name">Pessoas</span>
+                    </div>
+                    <div class="cat-card" data-cat="biblia_lugares">
+                        <span class="cat-icon">📍</span>
+                        <span class="cat-name">Lugares</span>
+                    </div>
+                    <div class="cat-card" data-cat="biblia_conceitos">
+                        <span class="cat-icon">💡</span>
+                        <span class="cat-name">Conceitos</span>
+                    </div>
+                    <div class="cat-card" data-cat="biblia_historias">
+                        <span class="cat-icon">📖</span>
+                        <span class="cat-name">Histórias</span>
+                    </div>
+                    <div class="cat-card" data-cat="biblia_parabolas">
+                        <span class="cat-icon">🌾</span>
+                        <span class="cat-name">Parábolas</span>
+                    </div>
+                    <div class="cat-card" data-cat="biblia_livros">
+                        <span class="cat-icon">📚</span>
+                        <span class="cat-name">Livros</span>
+                    </div>
+                    <div class="cat-card" data-cat="geral">
+                        <span class="cat-icon">🌍</span>
+                        <span class="cat-name">Geral</span>
+                    </div>
+                    <div class="cat-card" data-cat="festa">
+                        <span class="cat-icon">🎉</span>
+                        <span class="cat-name">Festa</span>
+                    </div>
+                    <div class="cat-card" data-cat="famosos">
+                        <span class="cat-icon">🌟</span>
+                        <span class="cat-name">Famosos</span>
+                    </div>
+                    <div class="cat-card" data-cat="entretenimento">
+                        <span class="cat-icon">🎬</span>
+                        <span class="cat-name">Filmes</span>
+                    </div>
+                    <div class="cat-card" data-cat="lugares_mundo">
+                        <span class="cat-icon">🏛️</span>
+                        <span class="cat-name">Mundo</span>
+                    </div>
+                    <div class="cat-card special" data-cat="mixed">
+                        <span class="cat-icon">🎲</span>
+                        <span class="cat-name">MIX</span>
+                    </div>
+                </div>
+                <div class="button-group mt-20">
+                    <button id="btn-begin-game" class="btn primary">Começar Partida</button>
+                    <button id="btn-back-to-teams" class="btn secondary">Voltar</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dice Screen -->
+        <section id="dice-screen" class="screen">
+            <div class="glass-card">
+                <h2 id="dice-team-name" class="team-highlight">Equipe 1</h2>
+                <p class="dice-instruction">Role o dado para o handicap!</p>
+                <div id="dice-container" class="dice-container">
+                    <div id="dice" class="dice">?</div>
+                </div>
+                <button id="btn-roll-dice" class="btn primary large-text">ROLAR DADO</button>
+            </div>
+        </section>
+
+        <!-- Gameplay Screen -->
+        <section id="gameplay-screen" class="screen">
+            <div class="game-header">
+                <div id="current-team-display" class="team-badge">Equipe 1</div>
+                <div id="timer" class="timer">30</div>
+            </div>
+
+            <div class="gameplay-content">
+                <div id="word-list-container" class="word-list">
+                    <!-- 5 words will be listed here -->
+                </div>
+            </div>
+
+            <div class="game-controls">
+                <button id="btn-correct" class="btn success btn-action">CORRETO</button>
+                <button id="btn-skip" class="btn warning btn-action-small">PULAR</button>
+            </div>
+
+            <!-- Time's Up Overlay -->
+            <div id="times-up-overlay" class="overlay">
+                <div class="overlay-content">
+                    <h1 class="times-up-text">TEMPO ESGOTADO!</h1>
+                    <p id="motivational-text" class="motivational-text">Bom trabalho!</p>
+                    <button id="btn-see-score" class="btn primary">Ver Placar</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Scoreboard Screen -->
+        <section id="scoreboard-screen" class="screen">
+            <div class="glass-card">
+                <h2>Placar & Progresso</h2>
+                <div id="board-container" class="board-container">
+                    <!-- Board tracks -->
+                </div>
+                <div id="scores-list" class="scores-list">
+                    <!-- Scores -->
+                </div>
+                <div class="button-group">
+                    <button id="btn-next-round" class="btn primary">Próxima Rodada</button>
+                    <button id="btn-finish-game" class="btn secondary">Finalizar Jogo</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- End Game Screen -->
+        <section id="end-screen" class="screen">
+            <div class="glass-card">
+                <h1 class="winner-title">VENCEDOR!</h1>
+                <h2 id="winner-text" class="team-highlight">Equipe A</h2>
+                <div id="final-scores" class="scores-list">
+                    <!-- Final scores -->
+                </div>
+                <div class="bible-verse-container" id="end-verse">
+                    <!-- Bible verse -->
+                </div>
+                <button id="btn-restart" class="btn primary">Reiniciar Jogo</button>
+            </div>
+        </section>
+
+        <!-- Audio -->
+        <audio id="snd-tick" src="https://assets.mixkit.co/active_storage/sfx/2571/2571-preview.mp3"></audio>
+        <audio id="snd-correct" src="https://assets.mixkit.co/active_storage/sfx/2000/2000-preview.mp3"></audio>
+        <audio id="snd-skip" src="https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3"></audio>
+        <audio id="snd-end" src="https://assets.mixkit.co/active_storage/sfx/2019/2019-preview.mp3"></audio>
+        <audio id="snd-dice" src="https://assets.mixkit.co/active_storage/sfx/2017/2017-preview.mp3"></audio>
+    </div>
+    <script src="src/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+# Standard web ignores
+node_modules/
+.DS_Store
+Thumbs.db
+.env
+.vscode/
+.idea/
+dist/
+build/
+*.log
