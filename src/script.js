@@ -132,7 +132,14 @@ function updateVerse(container) {
 // Navigation
 function showScreen(screenId) {
     screens.forEach(s => s.classList.remove('active'));
-    document.getElementById(screenId).classList.add('active');
+    const target = document.getElementById(screenId);
+    if (target) {
+        target.classList.add('active');
+        // Re-initialize icons for the new screen
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+    }
 }
 
 btnStart.onclick = () => showScreen('setup-screen');

@@ -4,150 +4,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>30 Segundos - Inovação Pedagógica PF</title>
-
-    <!-- PWA & Mobile Meta Tags -->
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#6366f1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>30 Segundos - Inovação PF</title>
 
     <link rel="stylesheet" href="src/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
     
-    <!-- Lucide Icons Library -->
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
 <body>
-    <div id="app">
+    <div class="bg-animate"></div>
+
+    <div id="app" style="width: 100%; height: 100%;">
         <!-- Home Screen -->
         <section id="home-screen" class="screen active">
-            <h1 class="title">30 Segundos</h1>
-            <p class="subtitle" style="color: var(--secondary); font-weight: 600; margin-bottom: 2rem;">Functional Programming Edition</p>
-            
-            <div id="home-verse" class="verse-container" style="margin-bottom: 2rem;">
-                <!-- Quote injected here -->
-            </div>
-
-            <div class="button-group">
-                <button id="btn-start" class="btn-main">INICIAR DESAFIO</button>
-                <button id="btn-rules" class="btn-main btn-secondary">Regras</button>
-                <button id="btn-settings" class="btn-main btn-secondary">Opções</button>
-            </div>
-
-            <div style="margin-top: 3rem; text-align: center; opacity: 0.7;">
-                <p style="font-size: 0.9rem;">Exposição de Inovação Tecnológica 2026</p>
-                <p style="font-size: 0.8rem; color: var(--primary);">Docente: Filipe Ive</p>
+            <div class="glass-card">
+                <h1 class="title">30 Segundos</h1>
+                <p style="color: var(--secondary); font-weight: 800; letter-spacing: 2px; margin-bottom: 2rem;">FUNCTIONAL PROGRAMMING</p>
+                <div id="home-verse" style="font-style: italic; opacity: 0.8; margin-bottom: 3rem; min-height: 2rem;"></div>
+                <button id="btn-start" class="btn-main">JOGAR</button>
+                <div style="display: flex; gap: 10px; width: 100%;">
+                    <button id="btn-rules" class="btn-main btn-secondary">Regras</button>
+                    <button id="btn-settings" class="btn-main btn-secondary">Opções</button>
+                </div>
             </div>
         </section>
 
-        <!-- Rules Screen -->
+        <!-- Rules -->
         <section id="rules-screen" class="screen">
-            <h2>Regras do Desafio</h2>
-            <div class="rules-content" style="background: var(--dark-lighter); padding: 2rem; border-radius: 1rem; margin: 2rem 0; max-width: 500px;">
-                <ul style="list-style: none;">
-                    <li style="margin-bottom: 1rem;">🚀 <strong>Tempo:</strong> 30 segundos por rodada.</li>
-                    <li style="margin-bottom: 1rem;">💡 <strong>Objetivo:</strong> Explicar termos de PF sem dizer a palavra.</li>
-                    <li style="margin-bottom: 1rem;">🚫 <strong>Proibido:</strong> Traduzir, soletrar ou usar rimas.</li>
-                    <li style="margin-bottom: 1rem;">🎲 <strong>Dado:</strong> O handicap reduz a pontuação final.</li>
-                </ul>
+            <div class="glass-card">
+                <h2 style="margin-bottom: 2rem;">Regras do Desafio</h2>
+                <div style="text-align: left; margin-bottom: 2rem; line-height: 1.8; opacity: 0.9;">
+                    <p>🚀 <strong>Tempo:</strong> 30 segundos por rodada.</p>
+                    <p>🎯 <strong>Objetivo:</strong> Explicar termos de PF sem dizer a palavra.</p>
+                    <p>🚫 <strong>Proibido:</strong> Soletrar, traduzir ou rimas.</p>
+                    <p>🎲 <strong>Handicap:</strong> O dado subtrai pontos dos acertos.</p>
+                </div>
+                <button class="btn-back btn-main btn-secondary">Voltar</button>
             </div>
-            <button class="btn-back btn-main btn-secondary">Voltar</button>
+        </section>
+
+        <!-- Settings -->
+        <section id="settings-screen" class="screen">
+            <div class="glass-card">
+                <h2 style="margin-bottom: 2rem;">Configurações</h2>
+                <div style="width: 100%; margin-bottom: 2rem; text-align: left;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 1.5rem; background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 1rem;">
+                        <span>Sons</span>
+                        <input type="checkbox" id="toggle-sounds" checked style="width: auto;">
+                    </div>
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 1.5rem; background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 1rem;">
+                        <span>Vibração</span>
+                        <input type="checkbox" id="toggle-vibration" checked style="width: auto;">
+                    </div>
+                    <button id="btn-fullscreen" class="btn-main btn-secondary" style="margin: 0;">Alternar Tela Cheia</button>
+                </div>
+                <button class="btn-back btn-main btn-secondary">Voltar</button>
+            </div>
         </section>
 
         <!-- Team Setup -->
         <section id="setup-screen" class="screen">
-            <h2>Equipes de Programadores</h2>
-            <div style="display: flex; gap: 10px; margin: 2rem 0; width: 100%; max-width: 400px;">
-                <input type="text" id="team-name-input" placeholder="Nome da Equipe" style="flex: 1; padding: 1rem; border-radius: 0.8rem; border: none; background: var(--dark-lighter); color: white;">
-                <button id="btn-add-team" class="btn-main" style="width: auto; padding: 1rem 1.5rem;">Add</button>
+            <div class="glass-card">
+                <h2 style="margin-bottom: 2rem;">Equipes</h2>
+                <div style="display: flex; gap: 10px; margin-bottom: 2rem; width: 100%;">
+                    <input type="text" id="team-name-input" placeholder="Ex: Lambda Team" style="flex: 1;">
+                    <button id="btn-add-team" class="btn-main" style="width: auto; margin: 0; padding: 0 1.5rem;">Add</button>
+                </div>
+                <div id="teams-list" style="width: 100%; max-height: 200px; overflow-y: auto; margin-bottom: 2rem;"></div>
+                <button id="btn-choose-categories" class="btn-main" disabled>Próximo</button>
+                <button class="btn-back btn-main btn-secondary">Voltar</button>
             </div>
-            <div id="teams-list" style="width: 100%; max-width: 400px; margin-bottom: 2rem;"></div>
-            <button id="btn-choose-categories" class="btn-main" disabled>Escolher Temas</button>
-            <button class="btn-back btn-main btn-secondary" style="margin-top: 1rem;">Voltar</button>
         </section>
 
         <!-- Category Selection -->
         <section id="category-screen" class="screen">
-            <h2>Tópicos Analíticos</h2>
-            <div class="category-grid" style="margin: 2rem 0;">
-                <div class="cat-card" data-cat="unidade_1_intro">
-                    <i data-lucide="info"></i>
-                    <p>Introdução</p>
+            <div class="glass-card" style="max-width: 600px;">
+                <h2 style="margin-bottom: 1rem;">Tópicos Analíticos</h2>
+                <div class="category-grid">
+                    <div class="cat-card" data-cat="unidade_1_intro">
+                        <i data-lucide="info"></i>
+                        <p>Introdução</p>
+                    </div>
+                    <div class="cat-card" data-cat="tipos_e_funcoes">
+                        <i data-lucide="binary"></i>
+                        <p>Tipagem</p>
+                    </div>
+                    <div class="cat-card" data-cat="logica_e_padroes">
+                        <i data-lucide="git-branch"></i>
+                        <p>Lógica</p>
+                    </div>
+                    <div class="cat-card" data-cat="listas">
+                        <i data-lucide="list"></i>
+                        <p>Listas</p>
+                    </div>
+                    <div class="cat-card" data-cat="recursao">
+                        <i data-lucide="refresh-cw"></i>
+                        <p>Recursão</p>
+                    </div>
+                    <div class="cat-card special" data-cat="mixed">
+                        <i data-lucide="award"></i>
+                        <p>MIX TOTAL</p>
+                    </div>
                 </div>
-                <div class="cat-card" data-cat="tipos_e_funcoes">
-                    <i data-lucide="binary"></i>
-                    <p>Tipos & Funções</p>
-                </div>
-                <div class="cat-card" data-cat="logica_e_padroes">
-                    <i data-lucide="git-branch"></i>
-                    <p>Lógica & Padrões</p>
-                </div>
-                <div class="cat-card" data-cat="listas">
-                    <i data-lucide="list"></i>
-                    <p>Listas</p>
-                </div>
-                <div class="cat-card" data-cat="recursao">
-                    <i data-lucide="refresh-cw"></i>
-                    <p>Recursão</p>
-                </div>
-                <div class="cat-card special" data-cat="mixed">
-                    <i data-lucide="award"></i>
-                    <p>DESAFIO TOTAL</p>
-                </div>
+                <button id="btn-begin-game" class="btn-main">Iniciar</button>
+                <button id="btn-back-to-teams" class="btn-main btn-secondary">Voltar</button>
             </div>
-            <button id="btn-begin-game" class="btn-main">Iniciar Compilação</button>
-            <button class="btn-back btn-main btn-secondary" style="margin-top: 1rem;">Voltar</button>
         </section>
 
         <!-- Dice Screen -->
         <section id="dice-screen" class="screen">
-            <h2 id="dice-team-name">Equipe</h2>
-            <div id="dice">?</div>
-            <button id="btn-roll-dice" class="btn-main">ROLAR DADO</button>
+            <div class="glass-card">
+                <h2 id="dice-team-name" style="margin-bottom: 1rem; color: var(--primary-light);">Equipe</h2>
+                <p style="opacity: 0.7;">Handicap da Rodada</p>
+                <div id="dice">?</div>
+                <button id="btn-roll-dice" class="btn-main">ROLAR DADO</button>
+            </div>
         </section>
 
         <!-- Gameplay -->
         <section id="gameplay-screen" class="screen">
-            <div style="display: flex; justify-content: space-between; width: 100%; max-width: 400px; margin-bottom: 1rem;">
-                <div id="current-team-display" style="font-weight: 800; color: var(--primary);">Equipe</div>
+            <div style="display: flex; justify-content: space-between; width: 100%; max-width: 400px; margin-bottom: 1.5rem;">
+                <div id="current-team-display" style="font-weight: 800; color: var(--primary-light);">Equipe</div>
                 <div id="timer">30</div>
             </div>
             <div id="physical-card" class="physical-card">
-                <div id="card-side-label" style="text-align: center; font-weight: 800; opacity: 0.6; margin-bottom: 1rem;">Lado</div>
+                <div id="card-side-label" style="text-align: center; font-weight: 800; opacity: 0.6; margin-bottom: 1rem; text-transform: uppercase; font-size: 0.8rem;">Lado Amarelo</div>
                 <div id="word-list-container" class="word-list-container"></div>
             </div>
             <div style="display: flex; gap: 1rem; margin-top: 2rem; width: 100%; max-width: 400px;">
-                <button id="btn-correct" class="btn-main" style="background: var(--success);">CORRETO</button>
-                <button id="btn-skip" class="btn-main" style="background: var(--danger);">PULAR</button>
+                <button id="btn-correct" class="btn-main" style="background: var(--success); margin: 0;">ACERTO</button>
+                <button id="btn-skip" class="btn-main" style="background: var(--danger); margin: 0;">PULAR</button>
             </div>
-
-            <!-- Time's Up Overlay -->
             <div id="times-up-overlay" class="overlay">
-                <h1>TEMPO ESGOTADO!</h1>
-                <p id="motivational-text" style="margin-bottom: 2rem; font-size: 1.5rem;"></p>
-                <button id="btn-see-score" class="btn-main">Ver Placar</button>
+                <h1 style="color: var(--danger); font-size: 4rem; margin-bottom: 1rem;">TEMPO!</h1>
+                <p id="motivational-text" style="font-size: 1.5rem; margin-bottom: 3rem;"></p>
+                <button id="btn-see-score" class="btn-main" style="max-width: 300px;">Ver Placar</button>
             </div>
         </section>
 
         <!-- Scoreboard -->
         <section id="scoreboard-screen" class="screen">
-            <h2>Placar Atual</h2>
-            <div id="board-container" style="width: 100%; max-width: 500px; margin: 2rem 0;"></div>
-            <div id="scores-list" style="width: 100%; max-width: 400px; margin-bottom: 2rem;"></div>
-            <button id="btn-next-round" class="btn-main">Próxima Rodada</button>
-            <button id="btn-finish-game" class="btn-main btn-secondary" style="margin-top: 1rem;">Finalizar Jogo</button>
+            <div class="glass-card">
+                <h2>Placar</h2>
+                <div id="board-container" style="margin: 2rem 0;"></div>
+                <div id="scores-list" style="margin-bottom: 2rem; width: 100%;"></div>
+                <button id="btn-next-round" class="btn-main">Próxima Rodada</button>
+                <button id="btn-finish-game" class="btn-main btn-secondary">Finalizar</button>
+            </div>
         </section>
 
         <!-- End Screen -->
         <section id="end-screen" class="screen">
-            <h1 style="color: var(--warning);">CAMPEÕES!</h1>
-            <h2 id="winner-text" style="font-size: 3rem; margin-bottom: 2rem;">Equipe</h2>
-            <div id="final-scores" style="width: 100%; max-width: 400px; margin-bottom: 2rem;"></div>
-            <button id="btn-restart" class="btn-main">Reiniciar Sistema</button>
+            <div class="glass-card">
+                <h1 style="color: var(--warning); margin-bottom: 1rem;">CAMPEÕES!</h1>
+                <h2 id="winner-text" style="font-size: 3rem; margin-bottom: 2rem;">Equipe</h2>
+                <div id="final-scores" style="margin-bottom: 2rem; width: 100%;"></div>
+                <div id="end-verse" style="font-style: italic; opacity: 0.7; margin-bottom: 2rem;"></div>
+                <button id="btn-restart" class="btn-main">Reiniciar</button>
+            </div>
         </section>
     </div>
 
@@ -159,10 +176,7 @@
     <audio id="snd-dice" src="https://assets.mixkit.co/active_storage/sfx/2017/2017-preview.mp3"></audio>
 
     <script src="src/script.js"></script>
-    <script>
-        // Initialize Lucide Icons
-        lucide.createIcons();
-    </script>
+    <script>lucide.createIcons();</script>
 </body>
 
 </html>
