@@ -1,45 +1,36 @@
-# 30 Segundos - Premium Team Edition
+# 30 Segundos: Functional Programming Edition 🚀
 
-Um jogo de adivinhação por equipes rápido e divertido, focado em temas bíblicos e gerais, projetado para grandes grupos e celebrações.
+Um sistema de gamificação pedagógica desenvolvido para a revisão e consolidação de conceitos de **Programação Funcional** e **Haskell**. 
 
-## 🚀 Funcionalidades Premium
+Este projeto foi apresentado na **Exposição de Inovação Tecnológica 2026** como uma ferramenta de dinamização para o Ensino Superior.
 
-- **Design Moderno**: Interface "Glassmorphism" otimizada para visibilidade em grupo.
-- **Categorias Ricas**: 
-  - **Bíblico**: Pessoas, Lugares, Conceitos, Histórias, Parábolas e Livros.
-  - **Geral**: Geral, Festa, Famosos, Filmes e Lugares do Mundo.
-- **Mecânica de Dado**: Handicap estratégico (0, 1 ou 2) para equilibrar as rodadas.
-- **Timer Dinâmico**: Cronômetro visual que muda de cor conforme o tempo acaba.
-- **Impacto Espiritual**: Versículos bíblicos inspiradores integrados.
+## 🌟 Destaques do Projeto
+- **Visual Hacker/Moderno**: Interface premium com gradientes CSS e design otimizado para projeção em sala de aula.
+- **Conteúdo Analítico**: Base de dados focada em conceitos de PF (Imutabilidade, Currying, Monads, HOFs, etc.).
+- **Mecânica de Jogo Fluida**: Cronómetro dinâmico, sistema de handicap com dados e gestão de múltiplas equipas.
+- **Pedagogia Ativa**: Transforma a revisão da matéria num momento de alto engajamento e competição saudável.
 
-## 🛠️ Como Instalar e Rodar
+## 🛠️ Tecnologias
+- **Frontend**: HTML5, CSS3 (Gradients & Glassmorphism), JavaScript (Vanila).
+- **Ícones**: [Lucide Icons](https://lucide.dev/).
+- **Fontes**: Google Fonts (Inter/Outfit).
 
-Este é um Web App estático (HTML/CSS/JS). Não requer servidor para rodar localmente.
+## 🚀 Como Rodar o Projeto
+Este é um Web App estático. Não requer instalação de dependências.
 
 1. Clone o repositório:
    ```bash
-   git clone <url-do-seu-repositorio>
+   git clone git@github.com:filipeive/30Segundos-programacaofuncional.git
    ```
-2. Abra o arquivo `index.html` em qualquer navegador moderno.
+2. Abra o arquivo `index.html` em qualquer navegador.
 
-## 🌐 Hospedagem
+## 📚 Documentação Adicional
+Para detalhes profundos, consulte:
+- [PROJETO_INOVACAO.md](./PROJETO_INOVACAO.md): Justificação científica e pedagógica.
+- [GUIA_TECNICO.md](./GUIA_TECNICO.md): Explicação da arquitetura do código para estudantes.
 
-Para hospedar este jogo em uma instância ou serviço de nuvem:
-
-### Opção 1: GitHub Pages (Recomendado)
-1. Suba o código para um repositório no GitHub.
-2. Vá em **Settings** > **Pages**.
-3. Selecione a branch `main` e a pasta `/ (root)`.
-4. O jogo estará disponível em `https://seu-usuario.github.io/nome-do-repo`.
-
-### Opção 2: Servidor Web (Nginx/Apache)
-Basta copiar todos os arquivos para a pasta pública do seu servidor (ex: `/var/www/html`).
-
-## 📜 Regras do Jogo
-- **Equipes**: Mínimo 2 equipes.
-- **Tempo**: 30 segundos por rodada.
-- **Objetivo**: Descrever 5 palavras sem dizer a palavra em si, traduzir ou soletrar.
-- **Vitória**: A primeira equipe a atingir 30 pontos.
+## 👨‍🏫 Autor
+- **Filipe Ive** - Docente de Programação Funcional.
 
 ---
-*"Quão bom e quão suave é que os irmãos vivam em união!" – Salmo 133:1*
+*"Programar é a arte de organizar a complexidade."*

@@ -4,250 +4,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>30 Segundos - Premium Team Edition</title>
+    <title>30 Segundos - Inovação Pedagógica PF</title>
 
     <!-- PWA & Mobile Meta Tags -->
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#6366f1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="30 Segundos">
 
     <link rel="stylesheet" href="src/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons Library -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
 <body>
     <div id="app">
         <!-- Home Screen -->
         <section id="home-screen" class="screen active">
-            <div class="glass-card main-card">
-                <h1 class="title">30 Segundos</h1>
-                <p class="subtitle">Team Edition</p>
-                <div class="bible-verse-container" id="home-verse">
-                    <!-- Bible verse will be injected here -->
-                </div>
-                <div class="button-group">
-                    <button id="btn-start" class="btn primary large-text">JOGAR</button>
-                    <div class="secondary-btns">
-                        <button id="btn-rules" class="btn secondary">Regras</button>
-                        <button id="btn-settings" class="btn secondary">Configurações</button>
-                    </div>
-                </div>
+            <h1 class="title">30 Segundos</h1>
+            <p class="subtitle" style="color: var(--secondary); font-weight: 600; margin-bottom: 2rem;">Functional Programming Edition</p>
+            
+            <div id="home-verse" class="verse-container" style="margin-bottom: 2rem;">
+                <!-- Quote injected here -->
+            </div>
+
+            <div class="button-group">
+                <button id="btn-start" class="btn-main">INICIAR DESAFIO</button>
+                <button id="btn-rules" class="btn-main btn-secondary">Regras</button>
+                <button id="btn-settings" class="btn-main btn-secondary">Opções</button>
+            </div>
+
+            <div style="margin-top: 3rem; text-align: center; opacity: 0.7;">
+                <p style="font-size: 0.9rem;">Exposição de Inovação Tecnológica 2026</p>
+                <p style="font-size: 0.8rem; color: var(--primary);">Docente: Filipe Ive</p>
             </div>
         </section>
 
         <!-- Rules Screen -->
         <section id="rules-screen" class="screen">
-            <div class="glass-card">
-                <h2>Regras do Jogo</h2>
-                <div class="rules-content">
-                    <ul>
-                        <li><strong>Equipes:</strong> Mínimo 2 equipes.</li>
-                        <li><strong>Tempo:</strong> 30 segundos por rodada.</li>
-                        <li><strong>Objetivo:</strong> Descrever 5 palavras para sua equipe.</li>
-                        <li><strong>Proibido:</strong> Dizer a palavra, traduzir ou soletrar.</li>
-                        <li><strong>Dado:</strong> O valor do dado (0, 1, 2) é subtraído dos acertos.</li>
-                        <li><strong>Vitória:</strong> A primeira equipe a atingir 30 pontos.</li>
-                    </ul>
-                </div>
-                <button class="btn-back btn secondary">Voltar</button>
+            <h2>Regras do Desafio</h2>
+            <div class="rules-content" style="background: var(--dark-lighter); padding: 2rem; border-radius: 1rem; margin: 2rem 0; max-width: 500px;">
+                <ul style="list-style: none;">
+                    <li style="margin-bottom: 1rem;">🚀 <strong>Tempo:</strong> 30 segundos por rodada.</li>
+                    <li style="margin-bottom: 1rem;">💡 <strong>Objetivo:</strong> Explicar termos de PF sem dizer a palavra.</li>
+                    <li style="margin-bottom: 1rem;">🚫 <strong>Proibido:</strong> Traduzir, soletrar ou usar rimas.</li>
+                    <li style="margin-bottom: 1rem;">🎲 <strong>Dado:</strong> O handicap reduz a pontuação final.</li>
+                </ul>
             </div>
+            <button class="btn-back btn-main btn-secondary">Voltar</button>
         </section>
 
-        <!-- Settings Screen -->
-        <section id="settings-screen" class="screen">
-            <div class="glass-card">
-                <h2>Configurações</h2>
-                <div class="settings-group">
-                    <div class="setting-item">
-                        <span>Sons</span>
-                        <label class="switch">
-                            <input type="checkbox" id="toggle-sounds" checked>
-                            <span class="slider round"></span>
-                        </label>
-                    </div>
-                    <div class="setting-item">
-                        <span>Vibração (Mobile)</span>
-                        <label class="switch">
-                            <input type="checkbox" id="toggle-vibration" checked>
-                            <span class="slider round"></span>
-                        </label>
-                    </div>
-                    <div class="setting-item">
-                        <span>Tela Cheia</span>
-                        <button id="btn-fullscreen" class="btn secondary btn-sm"
-                            style="padding: 10px; font-size: 0.8rem;">Ativar</button>
-                    </div>
-                </div>
-                <button class="btn-back btn secondary">Voltar</button>
-            </div>
-        </section>
-
-        <!-- Team Setup Screen -->
+        <!-- Team Setup -->
         <section id="setup-screen" class="screen">
-            <div class="glass-card">
-                <h2>Equipes</h2>
-                <div class="setup-form">
-                    <input type="text" id="team-name-input" placeholder="Nome da Equipe" maxlength="20">
-                    <button id="btn-add-team" class="btn primary">Add</button>
-                </div>
-                <div id="teams-list" class="teams-list">
-                    <!-- Teams will be listed here -->
-                </div>
-                <div class="button-group">
-                    <button id="btn-choose-categories" class="btn primary" disabled>Próximo</button>
-                    <button class="btn-back btn secondary">Voltar</button>
-                </div>
+            <h2>Equipes de Programadores</h2>
+            <div style="display: flex; gap: 10px; margin: 2rem 0; width: 100%; max-width: 400px;">
+                <input type="text" id="team-name-input" placeholder="Nome da Equipe" style="flex: 1; padding: 1rem; border-radius: 0.8rem; border: none; background: var(--dark-lighter); color: white;">
+                <button id="btn-add-team" class="btn-main" style="width: auto; padding: 1rem 1.5rem;">Add</button>
             </div>
+            <div id="teams-list" style="width: 100%; max-width: 400px; margin-bottom: 2rem;"></div>
+            <button id="btn-choose-categories" class="btn-main" disabled>Escolher Temas</button>
+            <button class="btn-back btn-main btn-secondary" style="margin-top: 1rem;">Voltar</button>
         </section>
 
-        <!-- Category Selection Screen -->
+        <!-- Category Selection -->
         <section id="category-screen" class="screen">
-            <div class="glass-card">
-                <h2>Categorias</h2>
-                <div class="category-grid">
-                    <div class="cat-card" data-cat="biblia_pessoas">
-                        <span class="cat-icon">👤</span>
-                        <span class="cat-name">Pessoas</span>
-                    </div>
-                    <div class="cat-card" data-cat="biblia_lugares">
-                        <span class="cat-icon">📍</span>
-                        <span class="cat-name">Lugares</span>
-                    </div>
-                    <div class="cat-card" data-cat="biblia_conceitos">
-                        <span class="cat-icon">💡</span>
-                        <span class="cat-name">Conceitos</span>
-                    </div>
-                    <div class="cat-card" data-cat="biblia_historias">
-                        <span class="cat-icon">📖</span>
-                        <span class="cat-name">Histórias</span>
-                    </div>
-                    <div class="cat-card" data-cat="biblia_parabolas">
-                        <span class="cat-icon">🌾</span>
-                        <span class="cat-name">Parábolas</span>
-                    </div>
-                    <div class="cat-card" data-cat="biblia_livros">
-                        <span class="cat-icon">📚</span>
-                        <span class="cat-name">Livros</span>
-                    </div>
-                    <div class="cat-card" data-cat="geral">
-                        <span class="cat-icon">🌍</span>
-                        <span class="cat-name">Geral</span>
-                    </div>
-                    <div class="cat-card" data-cat="festa">
-                        <span class="cat-icon">🎉</span>
-                        <span class="cat-name">Festa</span>
-                    </div>
-                    <div class="cat-card" data-cat="famosos">
-                        <span class="cat-icon">🌟</span>
-                        <span class="cat-name">Famosos</span>
-                    </div>
-                    <div class="cat-card" data-cat="entretenimento">
-                        <span class="cat-icon">🎬</span>
-                        <span class="cat-name">Filmes</span>
-                    </div>
-                    <div class="cat-card" data-cat="lugares_mundo">
-                        <span class="cat-icon">🏛️</span>
-                        <span class="cat-name">Mundo</span>
-                    </div>
-                    <div class="cat-card special" data-cat="mixed">
-                        <span class="cat-icon">🎲</span>
-                        <span class="cat-name">MIX</span>
-                    </div>
+            <h2>Tópicos Analíticos</h2>
+            <div class="category-grid" style="margin: 2rem 0;">
+                <div class="cat-card" data-cat="fundamentos">
+                    <i data-lucide="zap"></i>
+                    <p>Fundamentos</p>
                 </div>
-                <div class="button-group mt-20">
-                    <button id="btn-begin-game" class="btn primary">Começar Partida</button>
-                    <button id="btn-back-to-teams" class="btn secondary">Voltar</button>
+                <div class="cat-card" data-cat="haskell">
+                    <i data-lucide="code-2"></i>
+                    <p>Haskell</p>
+                </div>
+                <div class="cat-card" data-cat="tipos">
+                    <i data-lucide="shield-check"></i>
+                    <p>Tipagem</p>
+                </div>
+                <div class="cat-card" data-cat="listas_hof">
+                    <i data-lucide="layers"></i>
+                    <p>HOFs & Listas</p>
+                </div>
+                <div class="cat-card" data-cat="avancado">
+                    <i data-lucide="cpu"></i>
+                    <p>Avançado</p>
+                </div>
+                <div class="cat-card special" data-cat="mixed">
+                    <i data-lucide="flame"></i>
+                    <p>FULL STACK</p>
                 </div>
             </div>
+            <button id="btn-begin-game" class="btn-main">Iniciar Compilação</button>
+            <button class="btn-back btn-main btn-secondary" style="margin-top: 1rem;">Voltar</button>
         </section>
 
         <!-- Dice Screen -->
         <section id="dice-screen" class="screen">
-            <div class="glass-card">
-                <h2 id="dice-team-name" class="team-highlight">Equipe 1</h2>
-                <p class="dice-instruction">Role o dado para o handicap!</p>
-                <div id="dice-container" class="dice-container">
-                    <div id="dice" class="dice">?</div>
-                </div>
-                <button id="btn-roll-dice" class="btn primary large-text">ROLAR DADO</button>
-            </div>
+            <h2 id="dice-team-name">Equipe</h2>
+            <div id="dice">?</div>
+            <button id="btn-roll-dice" class="btn-main">ROLAR DADO</button>
         </section>
 
-        <!-- Gameplay Screen -->
+        <!-- Gameplay -->
         <section id="gameplay-screen" class="screen">
-            <div class="game-header">
-                <div id="current-team-display" class="team-badge">Equipe 1</div>
-                <div id="timer" class="timer">30</div>
+            <div style="display: flex; justify-content: space-between; width: 100%; max-width: 400px; margin-bottom: 1rem;">
+                <div id="current-team-display" style="font-weight: 800; color: var(--primary);">Equipe</div>
+                <div id="timer">30</div>
             </div>
-
-            <div class="gameplay-content">
-                <div id="physical-card" class="physical-card yellow">
-                    <div id="card-side-label" class="card-header">Lado Amarelo</div>
-                    <div id="word-list-container" class="word-list-container">
-                        <!-- Words will be injected here -->
-                    </div>
-                </div>
+            <div id="physical-card" class="physical-card">
+                <div id="card-side-label" style="text-align: center; font-weight: 800; opacity: 0.6; margin-bottom: 1rem;">Lado</div>
+                <div id="word-list-container" class="word-list-container"></div>
             </div>
-
-            <div class="game-controls">
-                <button id="btn-correct" class="btn success btn-action">CORRETO</button>
-                <button id="btn-skip" class="btn warning btn-action-small">PULAR</button>
+            <div style="display: flex; gap: 1rem; margin-top: 2rem; width: 100%; max-width: 400px;">
+                <button id="btn-correct" class="btn-main" style="background: var(--success);">CORRETO</button>
+                <button id="btn-skip" class="btn-main" style="background: var(--danger);">PULAR</button>
             </div>
 
             <!-- Time's Up Overlay -->
             <div id="times-up-overlay" class="overlay">
-                <div class="overlay-content">
-                    <h1 class="times-up-text">TEMPO ESGOTADO!</h1>
-                    <p id="motivational-text" class="motivational-text">Bom trabalho!</p>
-                    <button id="btn-see-score" class="btn primary">Ver Placar</button>
-                </div>
+                <h1>TEMPO ESGOTADO!</h1>
+                <p id="motivational-text" style="margin-bottom: 2rem; font-size: 1.5rem;"></p>
+                <button id="btn-see-score" class="btn-main">Ver Placar</button>
             </div>
         </section>
 
-        <!-- Scoreboard Screen -->
+        <!-- Scoreboard -->
         <section id="scoreboard-screen" class="screen">
-            <div class="glass-card">
-                <h2>Placar & Progresso</h2>
-                <div id="board-container" class="board-container">
-                    <!-- Board tracks -->
-                </div>
-                <div id="scores-list" class="scores-list">
-                    <!-- Scores -->
-                </div>
-                <div class="button-group">
-                    <button id="btn-next-round" class="btn primary">Próxima Rodada</button>
-                    <button id="btn-finish-game" class="btn secondary">Finalizar Jogo</button>
-                </div>
-            </div>
+            <h2>Placar Atual</h2>
+            <div id="board-container" style="width: 100%; max-width: 500px; margin: 2rem 0;"></div>
+            <div id="scores-list" style="width: 100%; max-width: 400px; margin-bottom: 2rem;"></div>
+            <button id="btn-next-round" class="btn-main">Próxima Rodada</button>
+            <button id="btn-finish-game" class="btn-main btn-secondary" style="margin-top: 1rem;">Finalizar Jogo</button>
         </section>
 
-        <!-- End Game Screen -->
+        <!-- End Screen -->
         <section id="end-screen" class="screen">
-            <div class="glass-card">
-                <h1 class="winner-title">VENCEDOR!</h1>
-                <h2 id="winner-text" class="team-highlight">Equipe A</h2>
-                <div id="final-scores" class="scores-list">
-                    <!-- Final scores -->
-                </div>
-                <div class="bible-verse-container" id="end-verse">
-                    <!-- Bible verse -->
-                </div>
-                <button id="btn-restart" class="btn primary">Reiniciar Jogo</button>
-            </div>
+            <h1 style="color: var(--warning);">CAMPEÕES!</h1>
+            <h2 id="winner-text" style="font-size: 3rem; margin-bottom: 2rem;">Equipe</h2>
+            <div id="final-scores" style="width: 100%; max-width: 400px; margin-bottom: 2rem;"></div>
+            <button id="btn-restart" class="btn-main">Reiniciar Sistema</button>
         </section>
-
-        <!-- Audio -->
-        <audio id="snd-tick" src="https://assets.mixkit.co/active_storage/sfx/2571/2571-preview.mp3"></audio>
-        <audio id="snd-correct" src="https://assets.mixkit.co/active_storage/sfx/2000/2000-preview.mp3"></audio>
-        <audio id="snd-skip" src="https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3"></audio>
-        <audio id="snd-end" src="https://assets.mixkit.co/active_storage/sfx/2019/2019-preview.mp3"></audio>
-        <audio id="snd-dice" src="https://assets.mixkit.co/active_storage/sfx/2017/2017-preview.mp3"></audio>
     </div>
+
+    <!-- Audio (Placeholders for innovation) -->
+    <audio id="snd-tick" src="https://assets.mixkit.co/active_storage/sfx/2571/2571-preview.mp3"></audio>
+    <audio id="snd-correct" src="https://assets.mixkit.co/active_storage/sfx/2000/2000-preview.mp3"></audio>
+    <audio id="snd-skip" src="https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3"></audio>
+    <audio id="snd-end" src="https://assets.mixkit.co/active_storage/sfx/2019/2019-preview.mp3"></audio>
+    <audio id="snd-dice" src="https://assets.mixkit.co/active_storage/sfx/2017/2017-preview.mp3"></audio>
+
     <script src="src/script.js"></script>
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+    </script>
 </body>
 
 </html>
