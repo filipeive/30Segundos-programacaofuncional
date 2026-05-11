@@ -1,33 +1,33 @@
 const WORDS_DATABASE = {
-    "fundamentos": [
-        ["Imutabilidade", "Pureza", "Função", "Efeito Colateral", "Estado"],
-        ["Expressão", "Valor", "Declaração", "Imperativo", "Funcional"],
-        ["Transparência", "Referencial", "Lógica", "Matemática", "Algoritmo"],
-        ["Variável", "Constante", "Recursão", "Iteração", "Loop"]
+    "unidade_1_intro": [
+        ["Paradigma", "Funcional", "Imperativo", "Declarativo", "Estado"],
+        ["Pureza", "Efeito Colateral", "Imutabilidade", "Haskell", "GHCi"],
+        ["Referencial", "Transparência", "Expressão", "Avaliação", "Valor"],
+        ["Prelude", "Compilação", "Interpretador", "Script", "Módulo"]
     ],
-    "haskell": [
-        ["Prelude", "GHCi", "Cabal", "Stack", "Hackage"],
-        ["Main", "Module", "Import", "Export", "Where"],
-        ["Let", "In", "Case", "Of", "If-Then-Else"],
-        ["Guarda", "Pattern", "Matching", "Binding", "Syntax"]
+    "tipos_e_funcoes": [
+        ["Int", "Integer", "Float", "Double", "Bool"],
+        ["Char", "String", "Tupla", "Tipo", "Assinatura"],
+        ["Parâmetro", "Argumento", "Polimorfismo", "Estático", "Forte"],
+        ["Type", "Inference", "Sinónimo", "Overloading", "Num"]
     ],
-    "tipos": [
-        ["Int", "Integer", "Float", "Double", "Char"],
-        ["String", "Bool", "List", "Tuple", "Maybe"],
-        ["Either", "Nothing", "Just", "Left", "Right"],
-        ["Typeclass", "Eq", "Show", "Ord", "Num"]
+    "logica_e_padroes": [
+        ["Pattern", "Matching", "Wildcard", "Guarda", "Otherwise"],
+        ["Case", "Expression", "If", "Then", "Else"],
+        ["Let", "In", "Where", "Vínculo", "Escopo"],
+        ["Booleano", "Comparação", "Igualdade", "Diferente", "Lógica"]
     ],
-    "listas_hof": [
-        ["Head", "Tail", "Map", "Filter", "Fold"],
-        ["Zip", "Length", "Reverse", "Concat", "Elem"],
-        ["Lambda", "Currying", "Partial", "Apply", "Composition"],
-        ["Take", "Drop", "SplitAt", "Span", "Break"]
+    "listas": [
+        ["Cabeça", "Cauda", "Head", "Tail", "Cons"],
+        ["Vazia", "Elemento", "Índice", "Comprimento", "Concatenação"],
+        ["Compreensão", "Gerador", "Filtro", "String", "Lista"],
+        ["Intervalo", "Sequência", "Lazy", "Infinita", "Extração"]
     ],
-    "avancado": [
-        ["Monad", "Functor", "Applicative", "Lazy", "Evaluation"],
-        ["Infinite", "List", "Thunk", "Strictness", "Profiling"],
-        ["IO", "Action", "Pure", "Unsafe", "Perform"],
-        ["Type", "Inference", "Kind", "Polymorphism", "Generic"]
+    "recursao": [
+        ["Caso Base", "Passo", "Recursivo", "Pilha", "Chamada"],
+        ["Indução", "Matemática", "Terminação", "Infinita", "Acumulador"],
+        ["Cauda", "Tail-Call", "Divisão", "Conquista", "Algoritmo"],
+        ["Fibonacci", "Fatorial", "Somatório", "Produtório", "MDC"]
     ]
 };
 
